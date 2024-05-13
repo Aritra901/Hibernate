@@ -1,8 +1,19 @@
 package com.aritra.Practice_.Hibernate;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import jakarta.persistence.Transient;
+
+@Entity
+@Table(name="alien_table")
 public class Alien {
+	@Id
 	private int aid;
+//	@Transient
 	private String aname;
+	@Column(name="alien_column")
 	private String color;
 	public int getAid() {
 		return aid;
@@ -22,5 +33,10 @@ public class Alien {
 	public void setColor(String color) {
 		this.color = color;
 	}
+	@Override
+	public String toString() {
+		return "Alien [aid=" + aid + ", aname=" + aname + ", color=" + color + "]";
+	}
+	
 	
 }

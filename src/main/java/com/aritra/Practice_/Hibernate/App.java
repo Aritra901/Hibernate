@@ -2,7 +2,10 @@ package com.aritra.Practice_.Hibernate;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
+import org.hibernate.service.ServiceRegistry;
 
 /**
  * Hello world!
@@ -10,17 +13,21 @@ import org.hibernate.cfg.Configuration;
  */
 public class App 
 {
-    public static void main( String[] args )
+    @SuppressWarnings("deprecation")
+	public static void main( String[] args )
     {
-        Alien aritra = new Alien();
-        aritra.setAid(109);
-        aritra.setAname("Aritra");
-        aritra.setColor("Black");
-        Configuration con = new Configuration();
-        SessionFactory sf = con.buildSessionFactory();
+        Alien aritra = null;
+//        aritra.setAid(111);
+//        aritra.setAname("Subhankar");
+//        aritra.setColor("Blue");
+        Configuration con = new Configuration().configure().addAnnotatedClass(Alien.class);
+        ServiceRegistry reg = new StandardServiceRegistryBuilder().applySettings(con.getProperties()).build();
+        SessionFactory sf = con.buildSessionFactory(reg);
         Session session = sf.openSession();
-        session.save(aritra);
-        
-        
+        Transaction tx = session.beginTransaction();
+//        session.save(aritra);
+        aritra = (Alien)session.get(Alien.class, 110);
+        tx.commit();
+        System.out.println(aritra);
     }
 }
