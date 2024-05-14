@@ -24,10 +24,16 @@ public class App
         ServiceRegistry reg = new StandardServiceRegistryBuilder().applySettings(con.getProperties()).build();
         SessionFactory sf = con.buildSessionFactory(reg);
         Session session = sf.openSession();
+        Session session_2 = sf.openSession();
         Transaction tx = session.beginTransaction();
-//        session.save(aritra);
+        Transaction tx2 = session_2.beginTransaction();
+        
+        		//        session.save(aritra); 
+        Alien aritra2 = (Alien)session_2.get(Alien.class, 111);
         aritra = (Alien)session.get(Alien.class, 110);
         tx.commit();
+        tx2.commit();
         System.out.println(aritra);
+        System.out.println(aritra2);
     }
 }
