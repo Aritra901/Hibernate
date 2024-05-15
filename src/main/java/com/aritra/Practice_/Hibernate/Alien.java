@@ -1,10 +1,14 @@
 package com.aritra.Practice_.Hibernate;
 
+import org.hibernate.annotations.Generated;
+import org.hibernate.validator.constraints.NotEmpty;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import jakarta.persistence.Transient;
+import jakarta.validation.constraints.NotNull;
 
 @Entity
 @Table(name="alien_table")
@@ -12,7 +16,7 @@ public class Alien {
 	@Id
 	private int aid;
 //	@Transient
-	private String aname;
+	private AlienName aname;
 	@Column(name="alien_column")
 	private String color;
 	public int getAid() {
@@ -21,10 +25,11 @@ public class Alien {
 	public void setAid(int aid) {
 		this.aid = aid;
 	}
-	public String getAname() {
+
+	public AlienName getAname() {
 		return aname;
 	}
-	public void setAname(String aname) {
+	public void setAname(AlienName aname) {
 		this.aname = aname;
 	}
 	public String getColor() {
