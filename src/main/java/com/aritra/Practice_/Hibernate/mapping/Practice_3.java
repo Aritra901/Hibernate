@@ -15,16 +15,19 @@ public class Practice_3 {
 		Laptop lap = new Laptop();
 		
 		lap.setLid(1);
-		lap.setLname("Dell");
+		lap.setLname("hp");
 		Student std = new Student();
 		std.setSname("Aritra");
 		std.setSid(1);
-      Configuration con = new Configuration().configure().addAnnotatedClass(Laptop.class);
+		std.getLap().add(lap);
+		lap.getStd().add(std);
+      Configuration con = new Configuration().configure().addAnnotatedClass(Laptop.class).addAnnotatedClass(Student.class);
       ServiceRegistry reg = new StandardServiceRegistryBuilder().applySettings(con.getProperties()).build();
       SessionFactory sf = con.buildSessionFactory(reg);
       Session session = sf.openSession();
       Transaction tx = session.beginTransaction();
       session.save(lap);
+      session.save(std);
       tx.commit();
       
 	}
