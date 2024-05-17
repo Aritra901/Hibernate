@@ -28,7 +28,9 @@ public class Practice_3 {
       Transaction tx = session.beginTransaction();
       session.save(lap);
       session.save(std);
+      Student st = session.get(Student.class, 1);
       tx.commit();
+      System.out.println(st);
       
 	}
 
