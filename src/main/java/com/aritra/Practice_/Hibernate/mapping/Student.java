@@ -14,6 +14,10 @@ import jakarta.persistence.OneToOne;
 
 @Entity
 public class Student {
+	@Override
+	public String toString() {
+		return "Student [Sid=" + Sid + ", Sname=" + Sname + ", lap=" + lap + "]";
+	}
 	@Id
 	@Column(name="student_id")
 	private int Sid;
