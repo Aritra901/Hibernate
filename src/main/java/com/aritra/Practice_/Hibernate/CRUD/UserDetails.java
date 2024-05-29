@@ -10,6 +10,7 @@ public class UserDetails {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int User_id;
+
 	private String User_name;
 	public int getUser_id() {
 		return User_id;
@@ -23,5 +24,10 @@ public class UserDetails {
 	public void setUser_name(String user_name) {
 		User_name = user_name;
 	}
+	@Override
+	public String toString() {
+		return "UserDetails [User_id=" + User_id + ", User_name=" + User_name + "]";
+	}
+
 	
 }

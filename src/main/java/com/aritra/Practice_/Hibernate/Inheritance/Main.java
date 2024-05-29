@@ -20,12 +20,12 @@ public class Main {
 		reg_wr.setWname("Sandipan");
 		reg_wr.setWsalary_Regular(150000);
 
-		Configuration con = new Configuration().configure().addAnnotatedClass(Worker.class)
-				.addAnnotatedClass(RegularWorker.class).addAnnotatedClass(ContractWorker.class);
-		ServiceRegistry reg = new StandardServiceRegistryBuilder().applySettings(con.getProperties()).build();
-		SessionFactory factory = con.buildSessionFactory(reg); 
-		Session session = factory.openSession();
-		Transaction tx = session.beginTransaction();
+			Configuration con = new Configuration().configure().addAnnotatedClass(Worker.class)
+					.addAnnotatedClass(RegularWorker.class).addAnnotatedClass(ContractWorker.class);
+			ServiceRegistry reg = new StandardServiceRegistryBuilder().applySettings(con.getProperties()).build();
+			SessionFactory factory = con.buildSessionFactory(reg); 
+			Session session = factory.openSession();
+			Transaction tx = session.beginTransaction();
 		session.save(wr);
 		session.save(reg_wr);
 		session.save(con_wr);

@@ -13,7 +13,6 @@ public class Practice_3 {
 
 	public static void main(String[] args) {
 		Laptop lap = new Laptop();
-		
 		lap.setLid(1);
 		lap.setLname("hp");
 		Student std = new Student();
