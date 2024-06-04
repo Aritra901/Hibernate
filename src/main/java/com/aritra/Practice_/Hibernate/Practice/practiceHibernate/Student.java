@@ -9,7 +9,14 @@ public class Student {
 	@Id
 	private int Std_id;
 	private String Std_name;
-	private String Std_age;
+	private int Std_age;
+	private int StdClass_id;
+	public int getStdClass_id() {
+		return StdClass_id;
+	}
+	public void setStdClass_id(int stdClass_id) {
+		StdClass_id = stdClass_id;
+	}
 	@ManyToOne
 	private Section sec;
 	public Section getSec() {
@@ -30,11 +37,11 @@ public class Student {
 	public void setStd_name(String std_name) {
 		Std_name = std_name;
 	}
-	public String getStd_age() {
+	public int getStd_age() {
 		return Std_age;
 	}
-	public void setStd_age(String std_age) {
-		Std_age = std_age;
+	public void setStd_age(int i) {
+		Std_age = i;
 	}
 	
 }

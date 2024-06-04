@@ -28,6 +28,7 @@ public class Class {
 
 	@ManyToMany
 	List<Institution> institute = new ArrayList<Institution>();
+	
 	public int getClass_id() {
 		return Class_id;
 	}

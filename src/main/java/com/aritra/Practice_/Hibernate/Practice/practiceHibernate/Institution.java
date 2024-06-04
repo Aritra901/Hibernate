@@ -10,15 +10,15 @@ import jakarta.persistence.ManyToMany;
 @Entity
 public class Institution {
 	@Id 
-	private int Insti_di;
+	private int Insti_id;
 	private String Insti_name;
 	@ManyToMany(mappedBy = "institute")
 	List<Class> Classes = new ArrayList<Class>();
-	public int getInsti_di() {
-		return Insti_di;
+	public int getInsti_id() {
+		return Insti_id;
 	}
-	public void setInsti_di(int insti_di) {
-		Insti_di = insti_di;
+	public void setInsti_id(int insti_id) {
+		Insti_id = insti_id;
 	}
 	public String getInsti_name() {
 		return Insti_name;
