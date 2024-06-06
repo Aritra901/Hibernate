@@ -19,16 +19,17 @@ public class Main {
 		SessionFactory factory = con.buildSessionFactory(reg); 
 		Session session = factory.openSession();
 		Transaction tx = session.beginTransaction();
-		Query query = session.createQuery("from UserDetails");
-		List<UserDetails> user = (List<UserDetails>)query.list();
-		for(UserDetails u : user) {
-			System.out.println("The user is" + u);
+		try {
+		System.out.println(session.get(UserDetails.class,3));
+//		session.delete(session.get(UserDetails.class, 1));
+		UserDetails user = session.get(UserDetails.class, 3);
+		user.setUser_name("Aritra Ghosh " );
+		session.update(user);
+		} catch (Exception e) {
+			// TODO: handle exception
+			System.out.println("Object not found...");
 		}
-//		for(int i=1; i<=10; i++) {
-//			UserDetails user = new UserDetails();
-//			user.setUser_Name("User " + i);
-//			session.save(user);
-//		}
+		
 		tx.commit();
 	}
 

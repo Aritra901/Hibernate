@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.hibernate.annotations.ManyToAny;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToMany;
@@ -20,7 +21,7 @@ public class Section {
 	public void setSection_id(int section_id) {
 		Section_id = section_id;
 	}
-	@ManyToMany
+	@ManyToMany(cascade = CascadeType.ALL)
 	List<Class> class_in = new ArrayList<Class>();
 	public List<Class> getClass_in() {
 		return class_in;
@@ -28,7 +29,7 @@ public class Section {
 	public void setClass_in(List<Class> class_in) {
 		this.class_in = class_in;
 	}
-	@OneToMany
+	@OneToMany(cascade = CascadeType.ALL , mappedBy = "sec")
 	List<Student> Students = new ArrayList<Student>();
 	public String getSection_name() {
 		return Section_name;

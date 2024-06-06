@@ -3,15 +3,16 @@ package com.aritra.Practice_.Hibernate.Practice.practiceHibernate;
 import java.util.ArrayList;
 import java.util.List;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToMany;
 @Entity
 public class Class {
 	@Id
-	private int Class_id;
+	private int Class_id; 
 	private String Class_name;
-	@ManyToMany
+	@ManyToMany(cascade = CascadeType.ALL , mappedBy = "class_in")
 	List<Section> Department = new ArrayList<Section>();
 	public List<Section> getDepartment() {
 		return Department;
@@ -26,7 +27,7 @@ public class Class {
 		this.institute = insti;
 	}
 
-	@ManyToMany
+	@ManyToMany(cascade = CascadeType.ALL)
 	List<Institution> institute = new ArrayList<Institution>();
 	
 	public int getClass_id() {
