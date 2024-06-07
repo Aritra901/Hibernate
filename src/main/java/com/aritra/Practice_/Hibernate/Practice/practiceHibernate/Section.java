@@ -21,7 +21,7 @@ public class Section {
 	public void setSection_id(int section_id) {
 		Section_id = section_id;
 	}
-	@ManyToMany(cascade = CascadeType.ALL)
+	@ManyToMany
 	List<Class> class_in = new ArrayList<Class>();
 	public List<Class> getClass_in() {
 		return class_in;
@@ -29,7 +29,7 @@ public class Section {
 	public void setClass_in(List<Class> class_in) {
 		this.class_in = class_in;
 	}
-	@OneToMany(cascade = CascadeType.ALL , mappedBy = "sec")
+	@OneToMany( mappedBy = "sec" , cascade = CascadeType.ALL )
 	List<Student> Students = new ArrayList<Student>();
 	public String getSection_name() {
 		return Section_name;

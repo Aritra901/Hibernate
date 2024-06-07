@@ -3,6 +3,7 @@ package com.aritra.Practice_.Hibernate.Practice.practiceHibernate;
 import java.util.ArrayList;
 import java.util.List;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToMany;
@@ -12,7 +13,7 @@ public class Institution {
 	@Id 
 	private int Insti_id;
 	private String Insti_name;
-	@ManyToMany(mappedBy = "institute")
+	@ManyToMany(mappedBy = "institute" , cascade = CascadeType.ALL)
 	List<Class> Classes = new ArrayList<Class>();
 	public int getInsti_id() {
 		return Insti_id;

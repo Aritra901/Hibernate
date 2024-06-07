@@ -24,8 +24,12 @@ public class Practice_CRUD {
 		
 //		String UserId = " 5 or 1 = 1";//SQL injection example get all the records...
 		int  UserId = 5;
-		Query query = session.createQuery("select User_name from UserDetails where  User_id > :UserId ");
-		query.setParameter("UserId",UserId);
+//		Query query = session.createQuery("select User_name from UserDetails where  User_id > :UserId and User_name = :UserName");
+//		query.setParameter("UserId",UserId);
+//		query.setParameter("UserName","User_7");
+		//.....
+		Query<String> query = session.getNamedQuery("UserDetails.byId");
+		query.setParameter("Userid", UserId);
 //		query.setFirstResult(5);
 //		query.setMaxResults(4);
 		List<String> user = (List<String>)query.list();

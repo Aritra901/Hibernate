@@ -4,8 +4,10 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.NamedQuery;
 
 @Entity
+@NamedQuery(name = "UserDetails.byId" , query = "select User_name from UserDetails where User_id > :Userid")
 public class UserDetails {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)

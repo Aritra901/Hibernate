@@ -14,6 +14,11 @@ public class Student {
 	public int getStdClass_id() {
 		return StdClass_id;
 	}
+	@Override
+	public String toString() {
+		return "Student [Std_id=" + Std_id + ", Std_name=" + Std_name + ", Std_age=" + Std_age + ", StdClass_id="
+				+ StdClass_id + ", sec=" + sec + "]";
+	}
 	public void setStdClass_id(int stdClass_id) {
 		StdClass_id = stdClass_id;
 	}

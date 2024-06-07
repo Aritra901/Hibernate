@@ -96,6 +96,9 @@ public class practice_Crud {
         sec_B.getStudents().add(std_2);
         sec_B.getStudents().add(std_3);
         sec_C.getStudents().add(std_5);
+        
+//        std_1.setSec(sec_A);
+//        std_2.setSec(sec_A);
         // Configure Hibernate and build SessionFactory
         Configuration con = new Configuration().configure().addAnnotatedClass(Institution.class)
                                 .addAnnotatedClass(Class.class)
@@ -110,17 +113,26 @@ public class practice_Crud {
 
         org.hibernate.Transaction tx = session.beginTransaction();
 
-        session.save(std_1);
-        session.save(std_2);
-        session.save(std_3);
-        session.save(std_4);
-        session.save(std_5);
-        session.save(sec_A);
-        session.save(sec_B);
-        session.save(sec_C);
-        session.save(class_1);
-        session.save(class_2);
-        session.save(insti);
+        
+//        session.save(insti);
+//        session.save(class_1);
+//        session.save(class_2);
+//        session.save(sec_A);
+//        session.save(sec_B);
+//        session.save(sec_C);
+//        session.save(std_1);
+//        session.save(std_2);
+//        session.save(std_3);
+//        session.save(std_4);
+//        session.save(std_5);
+        Student std = session.get(Student.class, 1);
+        System.out.println(std);
+        std.setSec(sec_C);
+        session.update(std);
+        
+        Class cls = session.get(Class.class, 1);
+        session.delete(cls);
+        
         tx.commit();
         session.close();
         sf.close();

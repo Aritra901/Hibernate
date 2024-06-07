@@ -12,7 +12,7 @@ public class Class {
 	@Id
 	private int Class_id; 
 	private String Class_name;
-	@ManyToMany(cascade = CascadeType.ALL , mappedBy = "class_in")
+	@ManyToMany(mappedBy = "class_in" , cascade = CascadeType.ALL)
 	List<Section> Department = new ArrayList<Section>();
 	public List<Section> getDepartment() {
 		return Department;
@@ -27,7 +27,7 @@ public class Class {
 		this.institute = insti;
 	}
 
-	@ManyToMany(cascade = CascadeType.ALL)
+	@ManyToMany
 	List<Institution> institute = new ArrayList<Institution>();
 	
 	public int getClass_id() {
