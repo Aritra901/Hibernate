@@ -5,7 +5,7 @@ import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 
-import com.aritra.Practice_.Hibernate.Alien;
+import com.aritra.practice.hibernate.Alien;
 
 public class Hibernate_configure {
 

@@ -1,4 +1,4 @@
-package com.aritra.Practice_.Hibernate;
+package com.aritra.Practice.Hibernate;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;

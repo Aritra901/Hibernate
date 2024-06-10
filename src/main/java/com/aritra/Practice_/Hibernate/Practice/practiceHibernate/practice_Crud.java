@@ -6,7 +6,6 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
 
-import com.aritra.Practice_.Hibernate.Alien;
 
 import jakarta.transaction.Transaction;
 import jakarta.transaction.Transactional;
