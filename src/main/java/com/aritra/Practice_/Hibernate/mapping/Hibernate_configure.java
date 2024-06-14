@@ -5,7 +5,7 @@ import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 
-import com.aritra.practice.hibernate.Alien;
+//import com.aritra.practice.hibernate.Alien;
 
 public class Hibernate_configure {
 
@@ -22,7 +22,7 @@ public class Hibernate_configure {
             MetadataSources sources = new MetadataSources(registry);
 
             // Add annotated classes
-            sources.addAnnotatedClass(Alien.class);
+//            sources.addAnnotatedClass(Alien.class);
             sources.addAnnotatedClass(Laptop.class);
             // Add more annotated classes as needed
 

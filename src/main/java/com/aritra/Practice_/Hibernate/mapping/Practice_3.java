@@ -7,7 +7,7 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
 
-import com.aritra.practice.hibernate.Alien;
+//import com.aritra.practice.hibernate.Alien;
 
 public class Practice_3 {
 

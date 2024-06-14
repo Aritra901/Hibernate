@@ -2,6 +2,7 @@ package com.aritra.Practice_.Hibernate.CRUD;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 
 @Entity
 public class Player {
@@ -9,6 +10,8 @@ public class Player {
 	private int player_id;
 	private String player_name;
 	private String team_name;
+	@ManyToOne
+	private Leauge leauge;
 	public int getPlayer_id() {
 		return player_id;
 	}
